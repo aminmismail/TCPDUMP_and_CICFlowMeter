@@ -8,7 +8,6 @@ echo ">>> Script dir: ${script_dir}"
 
 output_dir="${script_dir}"/csv
 
-
 ## Clean
 cancel() {
 	echo "+++ Converter is being canceled +++"
@@ -46,9 +45,8 @@ arq="${output_dir}/${base_pcap}_ISCX.csv"
 
 python3 Analisador.py $arq
 
-
-##echo "+++ Remove ${pcap_file}"
-##rm -f "${pcap_file}"
+echo "+++ Remove ${pcap_file}"
+rm -f "${pcap_file}"
 
 
 ## Rearrange the PCAP due to other CICFlowMeter versions' compatibility
