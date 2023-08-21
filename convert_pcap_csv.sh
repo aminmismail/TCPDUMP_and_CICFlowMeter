@@ -35,16 +35,20 @@ echo "    Input file: ${pcap_file}"
 echo "    Output dir: ${output_dir}"
 
 # CICFlowMeter-3.0/bin/CICFlowMeter
-# cic="${script_dir}"/CICFlowMeters/CICFlowMeter-3.0/bin/CICFlowMeter
+#cic="${script_dir}"/CICFlowMeters/CICFlowMeter-3.0/bin/CICFlowMeter
 cic="${script_dir}"/CICFlowMeters/CICFlowMeter-4.0/bin/CICFlowMeter
 
 "${cic}" "${pcap_file}" "${output_dir}"
+base_pcap="${pcap_file%.*}"
+base_pcap="${base_pcap##*/}"
+echo "${case_pcap}"
+arq="${output_dir}/${base_pcap}_ISCX.csv"
+
+python3 Analisador.py $arq
 
 
-echo "+++ Remove ${pcap_file}"
-rm -f "${pcap_file}"
-
-
+##echo "+++ Remove ${pcap_file}"
+##rm -f "${pcap_file}"
 
 
 ## Rearrange the PCAP due to other CICFlowMeter versions' compatibility
@@ -73,5 +77,4 @@ rm -f "${pcap_file}"
 
 #echo "+++ remove ${pcap_tmp}"
 #rm -f "${pcap_tmp}"
-
 
