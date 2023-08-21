@@ -6,7 +6,7 @@
 This project is about capturing packets flow through a network interface,
     save each specific-size chunk into a PCAP file,
     and then automatically convert it to the feature-extracted CSV file by
-    CICFlowMeter-3.0.
+    CICFlowMeter-4.0.
 
 The CSV is meant to be analysed for intrusion detection.
 You can find further detail at the [website of CIC](http://www.unb.ca/cic).
